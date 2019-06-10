@@ -27,7 +27,7 @@ function onEachFeature(feature, layer) {
 function eqcolors(mag) {
  
   if (mag >= 6) {
-    return "7E32EF"
+    return "#7E32EF"
   }
   else if (mag >=5) {
     return "#E931A6"
@@ -39,30 +39,37 @@ function eqcolors(mag) {
     return "#E9E931"
   }
   else if (mag >=2) {
-    return "#CBE931"
+    return "#7FFFD4"
+  }
+  else if (mag >= 1) {
+    return "#B1F565"
   }
   else {
-    return "#A3EBA3"
+    return "#DCDCDC"
   }
 }
 function radius(mag) {
-  if (mag > 5) {
-    return 35
+  if (mag >6){
+    return 34
+  }
+  
+  else if (mag > 5) {
+    return 21
   }
   else if (mag >4) {
-    return 30
+    return 13
   }
   else if (mag >3) {
-    return 25
+    return 8
   }
   else if (mag >2) {
-    return 20
+    return 5
   }
   else if (mag >1) {
-    return 15
+    return 3
   }
   else {
-    return 5
+    return 2
   }
 }
 function eqstyle(feature){
@@ -78,8 +85,8 @@ function eqstyle(feature){
 var legend = L.control({positon: "bottomright"})
 legend.onAdd = function (myMap){
   var div = L.DomUtil.create('div',"info legend")
-  var limits = ['0-1','1-2','2-3','3-4','4-5','5+']
-  // var colors = ["#e50606", "#e8a355", "#e8d655", "#cfe855", "#abe855", "#5fe855"]
+  var limits = ['0-1','1-2','2-3','3-4','4-5','5-6', '6+']
+  // var colors = ["#7E32EF", "#E931A6", "#E98731", "#E9E931", "#CBE931", "#A3EBA3"]
   var labels = []
   var colors =[]
 
